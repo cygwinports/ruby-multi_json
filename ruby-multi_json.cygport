@@ -1,10 +1,16 @@
 inherit rubygem
 
 NAME="ruby-multi_json"
-VERSION=1.7.9
+VERSION=1.10.1
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby JSON backend switching extension"
 DESCRIPTION="A gem to provide easy switching between different JSON backends,
 including Oj, Yajl, the JSON gem (with C-extensions), the pure-Ruby JSON gem,
 and OkJson."
+
+ARCH=noarch
+
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_multi_json_CONTENTS="${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
+ruby_multi_json_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
